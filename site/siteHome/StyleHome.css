@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Zelda';
+    src: url(fonteHome/Triforce-y07d.ttf);
+}
+
+body {
+    font-family: 'Zelda';
+    margin: 0;
+}
+
+.header {
+    background-color: rgb(135, 24, 108);
+    height: 95px;
+    
+}
+
+.header .container {
+    margin: 0 20% 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .container .nav{
+    color: white;
+    list-style: none;
+
+}
+
+.header .container .nav .lista .unlist{
+    display: inline;
+    padding: 10vh;
+}
