@@ -9,25 +9,54 @@ body {
 }
 
 .header {
-    background-color: rgb(135, 24, 108);
-    height: 95px;
-    
+    background-color: black;
+    height: 875px;
+}
+
+.header .imagem1{
+    background-image: url(imagesHome/wallpaperflare.com_wallpaper.png);
+    /* background-image: url(imagesHome/ZeldaImage.png); */
+    height: 875px;
+    animation: imageAnimation1 5s infinite ease-in-out;
+}
+
+@keyframes imageAnimation1 {
+    0%{
+        opacity: 0.0;
+        /* border-left: -10%; */
+    }
+    50%{
+        opacity: 1;
+        /* border-left: 40%; */
+    }
+    /* 80% {
+        opacity: 0.0;
+    } */
+    100%
+    {
+        opacity: 0.0;
+        /* border-left: 40%; */
+    }
+}
+
+@keyframes{
+
 }
 
 .header .container {
-    margin: 0 20% 0 20%;
+    margin: 0 0 0 85%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 100%;
 }
 
 .header .container .nav{
+    margin: 300px 0 0 0;
     color: white;
     list-style: none;
-
+    opacity: 100%;
+    font-size: 30px;
 }
 
 .header .container .nav .lista .unlist{
-    display: inline;
-    padding: 10vh;
+
 }
