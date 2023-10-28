@@ -10,37 +10,59 @@ body {
 
 .header {
     background-color: black;
-    height: 875px;
+    height: 860px;
+    position: relative;
 }
 
 .header .imagem1{
-    background-image: url(imagesHome/wallpaperflare.com_wallpaper.png);
-    /* background-image: url(imagesHome/ZeldaImage.png); */
     height: 875px;
-    animation: imageAnimation1 5s infinite ease-in-out;
+    animation: imageAnimation1 20s infinite linear;
 }
-
 @keyframes imageAnimation1 {
     0%{
         opacity: 0.0;
-        /* border-left: -10%; */
+        background-image: url(imagesHome/link.png);
+        margin-left: 30vh;
     }
-    50%{
+    11%{
         opacity: 1;
-        /* border-left: 40%; */
-    }
-    /* 80% {
-        opacity: 0.0;
-    } */
-    100%
-    {
-        opacity: 0.0;
-        /* border-left: 40%; */
-    }
-}
+        background-image: url(imagesHome/link.png);
 
-@keyframes{
+    }
+    22%{
+        opacity: 0.0;
+        background-image: url(imagesHome/link.png);
 
+    }
+    33%{
+        opacity: 0.0;
+        background-image: url(imagesHome/Ganon.png);
+
+    }
+    40%{
+        opacity: 1;
+        background-image: url(imagesHome/Ganon.png);
+
+    }
+    55%{
+        opacity: 0.0;
+        background-image: url(imagesHome/Ganon.png);
+
+    }
+    66%{
+        opacity: 0.0;
+        background-image: url(imagesHome/Zelda.png);
+
+    }
+    77%{
+        opacity: 1;
+        background-image: url(imagesHome/Zelda.png);
+
+    }
+    100%{
+        opacity: 0.0;
+        background-image: url(imagesHome/Zelda.png);
+    }
 }
 
 .header .container {
@@ -50,13 +72,10 @@ body {
 }
 
 .header .container .nav{
-    margin: 300px 0 0 0;
+    margin: -500px 0 0 0;
     color: white;
     list-style: none;
     opacity: 100%;
     font-size: 30px;
-}
-
-.header .container .nav .lista .unlist{
-
+    position: absolute;
 }
