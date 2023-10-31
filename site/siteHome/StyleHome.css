@@ -3,26 +3,36 @@
     src: url(fonteHome/Triforce-y07d.ttf);
 }
 
+@font-face {
+    font-family: 'Zelda2';
+    src: url(fonteHome/HyliaSerifBeta-Regular.otf);
+}
+
 body {
     font-family: 'Zelda';
     margin: 0;
 }
 
+.container{
+    width: 80%;
+}
+
 .header {
     background-color: black;
-    height: 860px;
+    height: 925px;
     position: relative;
 }
 
 .header .imagem1{
-    height: 875px;
+    height: 925px;
     animation: imageAnimation1 20s infinite linear;
 }
+
 @keyframes imageAnimation1 {
     0%{
         opacity: 0.0;
         background-image: url(imagesHome/link.png);
-        margin-left: 30vh;
+        margin-left: 15vh;
     }
     11%{
         opacity: 1;
@@ -75,7 +85,409 @@ body {
     margin: -500px 0 0 0;
     color: white;
     list-style: none;
-    opacity: 100%;
     font-size: 30px;
     position: absolute;
+}
+
+.header .container .nav{
+    cursor: pointer;
+
+}
+
+.header .container .nav ul:hover {
+    width: 120px;
+}
+
+.curio {
+    font-family: 'Zelda2';
+    background-image: url(imagesHome/fundoTOTK-1.png);
+    height: 860px;
+    display: flex;
+}
+
+.curio .container {
+    display: flex;
+    align-items: center;
+    margin: 0 20% 0 20%;
+}
+
+.curio .container .escrito {
+    display: flex;
+    color: white;
+    margin: 0 0 0 0;
+    border: solid 10px white;
+    /* border-image: url(imagesHome/teste.png) 10% 20% repeat; */
+}
+
+.curio .container .escrito img {
+    width: 80%;
+    height: 15%;
+    margin: 0 0 0 0;
+}
+
+.curio .container .escrito p{
+    font-size: 25px;
+    margin: 0 0 0 0;
+        align-items: center;
+}
+
+.games{
+    background-image: url(imagesHome/fundoTOTK-1.png);
+}
+
+.diagrama .container {
+    background-color: purple;
+    box-shadow: black 10px 0 10px 0;
+    height: 900px;
+}
+
+.conteiner {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(imagesHome/imgCards/fundoFundoLink.png);
+    background-repeat: no-repeat;
+    background-position: 26%;
+    width: 98.1vw;
+    height: 875px;
+    box-shadow: 5cm 5cm 5cm 5cm black;
+    background-color: black;
+}
+
+.games .container .conteiner .titulo-diagrama {
+    backdrop-filter: blur(2px);
+    border-radius: 20%;
+    border: black solid 1px;
+    font-size: 5vh;
+}
+
+.conteiner p{
+    font-size: 20px;
+    backdrop-filter: blur(2px);
+    border-radius: 20%;
+}
+
+.cartas-1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 87%;
+    height: 300px;
+}
+
+.cartas-2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+}
+
+.cartas-3 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 92%;
+    height: 300px;
+}
+
+/*Primeiro bloco*/
+
+.cartas-1 .cardpri {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: #f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    background-image: url(imagesHome/imgCards/fundoSkyward.png);
+    background-color: black;
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-1 .cardpri:hover{
+    color: white;
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    filter:blur(0px);
+    width: 50%;
+    backdrop-filter: blur(10px);
+}
+
+.cartas-1 .cardtwo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background: #f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoOcarina.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-1 .cardtwo:hover{
+    color: #5303b6;
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    filter:blur(0px);
+    width: 50%;
+}
+
+.cartas-1 .cardthere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoLinkToThePast.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-1 .cardthere:hover{
+    color: #6d9808;;
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    filter:blur(0px);
+    width: 50%;
+}
+
+/*Segundo bloco*/
+
+.cartas-2 .carddois {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoMinish.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-2 .carddois:hover{
+    color: #473e3e;
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    filter:blur(0px);
+    width: 50%;
+}
+
+.cartas-2 .cardtres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoMajorasMask.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-2 .cardtres:hover{
+    color: #473e3e;
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    filter:blur(0px);
+    width: 50%;
+}
+
+.cartas-2 .cardquatro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoTwilight.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-2 .cardquatro:hover{
+    color: #473e3e;
+    transition: 1s;
+    cursor: pointer;
+    filter:blur(0px);
+    opacity: 100%;
+    width: 50%;
+}
+
+/*Terceiro bloco*/
+
+.cartas-3 .cardfist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoWindWaker.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-3 .cardfist:hover{
+    color:#4b0404;
+    transition: 1s;
+    cursor: pointer;
+    filter:blur(0px);
+    opacity: 100%;
+    width: 50%;
+}
+
+.cartas-3 .cardsecond {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoBOTW.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-3 .cardsecond:hover {
+    color: #0505ae;
+    transition: 1s;
+    cursor: pointer;
+    filter:blur(0px);
+    opacity: 100%;
+    width: 50%;
+    background-repeat: no-repeat;
+}
+
+.cartas-3 .cardterceiro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 29%;
+    min-height: 1px;
+    height: 220px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    opacity: 50%;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgCards/fundoTOTK.png);
+    filter:blur(1px);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartas-3 .cardterceiro:hover {
+    color: #19a600;;
+    transition: 1s;
+    filter:blur(0px);
+    cursor: pointer;
+    width: 50%;
+    opacity: 100%;
+}
+
+
+section img {
+    height: 45px;
+    padding: 15px;
+}
+
+.conteiner p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 28px;
+    text-align: center; 
+    padding: 15px;
+}
+.titulo-diagrama{
+color: white;
 }
