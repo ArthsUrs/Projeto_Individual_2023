@@ -13,6 +13,8 @@ body {
     margin: 0;
 }
 
+/* PERSONAGENS */
+
 .container{
     width: 80%;
 }
@@ -33,45 +35,63 @@ body {
         opacity: 0.0;
         background-image: url(imagesHome/link.png);
         margin-left: 15vh;
+        border-image-repeat: none;
+        background-size: cover;
     }
     11%{
         opacity: 1;
         background-image: url(imagesHome/link.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     22%{
         opacity: 0.0;
         background-image: url(imagesHome/link.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     33%{
         opacity: 0.0;
         background-image: url(imagesHome/Ganon.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     40%{
         opacity: 1;
         background-image: url(imagesHome/Ganon.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     55%{
         opacity: 0.0;
         background-image: url(imagesHome/Ganon.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     66%{
         opacity: 0.0;
         background-image: url(imagesHome/Zelda.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     77%{
         opacity: 1;
         background-image: url(imagesHome/Zelda.png);
+        border-image-repeat: none;
+        background-size: cover;
 
     }
     100%{
         opacity: 0.0;
         background-image: url(imagesHome/Zelda.png);
+        border-image-repeat: none;
+        background-size: cover;
     }
 }
 
@@ -87,16 +107,21 @@ body {
     list-style: none;
     font-size: 30px;
     position: absolute;
+    cursor: pointer;
 }
 
-.header .container .nav{
-    cursor: pointer;
-
+.header .container .nav .lista a{
+    color: white;
+    text-decoration: none;
 }
 
 .header .container .nav ul:hover {
-    width: 120px;
+    font-size: 40px;
 }
+
+/* HEADER */
+
+/* PERSONAGENS */
 
 .curio {
     font-family: 'Zelda2';
@@ -130,6 +155,12 @@ body {
     margin: 0 0 0 0;
         align-items: center;
 }
+
+/* OBJETIVO ONU */
+
+
+
+/* PERSONAGENS */
 
 .games{
     background-image: url(imagesHome/fundoTOTK-1.png);
@@ -471,7 +502,6 @@ body {
     opacity: 100%;
 }
 
-
 section img {
     height: 45px;
     padding: 15px;
@@ -483,11 +513,151 @@ section img {
     justify-content: center;
 }
 
-h2{
+.conteinter h2{
     font-size: 28px;
     text-align: center; 
     padding: 15px;
 }
+
 .titulo-diagrama{
 color: white;
 }
+
+/* JOGOS */
+
+
+
+/* PERSONAGENS */
+
+.perso h2 {
+    font-size: 50px;
+}
+
+.perso {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(imagesHome/imgPerso/fundoPersonagens.png);
+    background-repeat: no-repeat;
+    background-position: 10%;
+    width: 98.1vw;
+    height: 900px;
+    box-shadow: 5cm 5cm 5cm 5cm black;
+    background-color: black;
+    background-position: center;
+}
+
+.perso .cartas-personagens {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 87%;
+    height: 300px;
+}
+
+.perso .cartas-personagens .persoLink {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    background: #f2f2f2;
+    width: 20%;
+    min-height: 1px;
+    height: 500px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    background-image: url(imagesHome/imgPerso/fundoLinkOcarinaofTime.png);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(100px);
+}
+
+.perso .cartas-personagens .persoLink:hover{
+    color: rgb(255, 204, 0);
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    width: 50%;
+}
+
+.perso .cartas-personagens .persoZelda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background: #f2f2f2;
+    width: 25%;
+    min-height: 1px;
+    height: 500px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgPerso/fundoZeldaOcarinaOfTime.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.perso .cartas-personagens .persoZelda:hover{
+    color: rgb(255, 204, 0);
+    transition: 1s;
+    cursor: pointer;
+    opacity: 100%;
+    width: 50%;
+}
+
+.perso .cartas-personagens .persoGanon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    background:#f2f2f2;
+    width: 20%;
+    min-height: 1px;
+    height: 500px;
+    border-radius: 5px;
+    border: solid 5px black;
+    box-shadow: black 2px 0 2px 0;
+    transition: 1s;
+    cursor: pointer;
+    background-image: url(imagesHome/imgPerso/fundoGanonOcarinaOfTime.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.perso .cartas-personagens .persoGanon:hover{
+    color: rgb(255, 204, 0);
+    transition: 1s;
+    cursor: pointer;
+    width: 50%;
+}
+
+.perso .titulo-perso{
+    color: black;
+    margin: 0 20% 200px 20%;
+}
+
+.perso .cartas-personagens {
+    margin: 0 20% 0 20%;
+}
+
+.perso .cartas-personagens h1{
+    font-size: 50px;
+    backdrop-filter: blur(1px);
+    margin: 0 0 0 0;
+}
+
+.perso .cartas-personagens h2{
+    font-size: 20px;
+    backdrop-filter: blur(1px);
+    margin: 0 0 0 0;
+}
+
+
+/* PERSONAGENS */
