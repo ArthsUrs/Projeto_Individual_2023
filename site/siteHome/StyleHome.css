@@ -564,7 +564,6 @@ color: white;
     align-items: center;
     background: #f2f2f2;
     width: 20%;
-    min-height: 1px;
     height: 500px;
     border-radius: 5px;
     border: solid 5px black;
@@ -574,7 +573,6 @@ color: white;
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(100px);
 }
 
 .perso .cartas-personagens .persoLink:hover{
