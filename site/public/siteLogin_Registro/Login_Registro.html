@@ -41,14 +41,14 @@
                             Login:
                         </h1>
                         <br>
-                        <input type="password" id="i_LoginEmail" placeholder="Entre com seu email" required>
+                        <input type="text" id="i_LoginEmail" value="Arthur@gmai.com" placeholder="Entre com seu email" required>
                     </div>
                     <div class="senha">
                         <h1>
                             Senha:
                         </h1>
                         <br>
-                        <input type="password" id="i_LoginEmail" placeholder="Entre com seu email" required> <br>
+                        <input type="password" id="i_LoginSenha" value="123" placeholder="Entre com seu email" required> <br>
                     </div>
                     <div class="redirecionar">
                         <h3>Nao esta registrado ainda?</h3>
@@ -199,13 +199,11 @@
             nomeVar == ""
         ) {
             alert("Preencha todos os campos, por favor")
-
-            finalizarAguardar();
             return false;
         }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuario/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -248,79 +246,66 @@
             });
     }
 
-    //cadastrar
+    // cadastrar
 
 
     // LOGIN
 
-    // function entrar() {
-    //     aguardar();
+    function entrar() {
+        var emailVar = i_LoginEmail.value;
+        var senhaVar = i_LoginSenha.value;
 
-    //     var emailVar = email_input.value;
-    //     var senhaVar = senha_input.value;
+        if (emailVar == "" || senhaVar == "") {
+            alert("Campos em branco");
+            return false;
+        }
 
-    //     if (emailVar == "" || senhaVar == "") {
-    //         cardErro.style.display = "block"
-    //         mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-    //         finalizarAguardar();
-    //         return false;
-    //     }
-    //     else {
-    //         setInterval(sumirMensagem, 5000)
-    //     }
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
 
-    //     console.log("FORM LOGIN: ", emailVar);
-    //     console.log("FORM SENHA: ", senhaVar);
+        fetch("/usuario/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
 
-    //     fetch("/usuarios/autenticar", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             emailServer: emailVar,
-    //             senhaServer: senhaVar
-    //         })
-    //     }).then(function (resposta) {
-    //         console.log("ESTOU NO THEN DO entrar()!")
+            if (resposta.ok) {
+                console.log(resposta);
+                alert("Seja bem vindo de volta (ou só bem vindo)")
 
-    //         if (resposta.ok) {
-    //             console.log(resposta);
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NICKNAME = json.nickname;
+                    sessionStorage.ID_USUARIO = json.id;
 
-    //             resposta.json().then(json => {
-    //                 console.log(json);
-    //                 console.log(JSON.stringify(json));
-    //                 sessionStorage.EMAIL_USUARIO = json.email;
-    //                 sessionStorage.NOME_USUARIO = json.nome;
-    //                 sessionStorage.ID_USUARIO = json.id;
-    //                 sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    setTimeout(function () {
+                        window.location.href = "/siteUsuario/IndexUser.html"
+                    }, 1000); // apenas para exibir o loading
+                });
 
-    //                 setTimeout(function () {
-    //                     window.location = "./dashboard/cards.html";
-    //                 }, 1000); // apenas para exibir o loading
+            } else {
 
-    //             });
+                console.log("Houve um erro ao tentar realizar o login!");
 
-    //         } else {
+                resposta.text().then(texto => {
+                    console.error("erro");
+                });
+            }
 
-    //             console.log("Houve um erro ao tentar realizar o login!");
+        }).catch(function (erro) {
+            console.log(erro);
+        })
 
-    //             resposta.text().then(texto => {
-    //                 console.error(texto);
-    //                 finalizarAguardar(texto);
-    //             });
-    //         }
-
-    //     }).catch(function (erro) {
-    //         console.log(erro);
-    //     })
-
-    //     return false;
-    // }
-
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
+        return false;
+    }
 
 
     // login

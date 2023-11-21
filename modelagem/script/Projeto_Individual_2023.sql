@@ -1,4 +1,4 @@
-create database ProjetoIndividual;
+-- create database ProjetoIndividual;
 
 -- drop database ProjetoIndividual;
 
@@ -13,8 +13,8 @@ create table titulo(
 
 create table usuario (
 	idUser int primary key auto_increment,
-    nickname varchar(45),
-    email varchar(45),
+    nickname varchar(45) unique,
+    email varchar(45) unique,
     senha varchar(45),
     fkTitulo int,
     fkInventario int,
