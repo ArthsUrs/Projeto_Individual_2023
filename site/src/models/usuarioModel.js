@@ -2,10 +2,10 @@ var database = require("../database/config")
 
 
 
-function cadastrar(nome, email, senha) {
+function cadastrar(nome, email, senha, fkTitulo) {
     var instrucao = `
-        INSERT INTO usuario (nickname, email, senha) VALUES
-         ('${nome}', '${email}' , '${senha}');`;
+        INSERT INTO usuario (nickname, email, senha, fkTitulo) VALUES
+         ('${nome}', '${email}' , '${senha}', ${fkTitulo});`;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
@@ -19,8 +19,26 @@ function autenticar(email, senha) {
     return database.executar(instrucao);
 }
 
+function update(fkItem, fkLocal, fkPersonagem, sessionUser) {
+    var instrucao = `
+    update usuario set fkItem = ${fkItem}, fkLocal = ${fkLocal}, fkPersonagem = ${fkPersonagem}
+        where idUser = ${sessionUser};`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function pegar(){
+    var instrucao = `
+    select count(u.fkTitulo) as count, t.titulo from usuario as u join titulo as t on u.fkTitulo = t.idTitulo group by t.titulo;
+    `
+    return database.executar(instrucao);
+}
+
+
 
 module.exports = {
     cadastrar,
-    autenticar
+    autenticar,
+    update,
+    pegar
 };

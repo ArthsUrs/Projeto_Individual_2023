@@ -8,24 +8,28 @@
     src: url(fonteHome/HyliaSerifBeta-Regular.otf);
 }
 
+@font-face {
+    font-family: 'Zelda3';
+    src: url(fonteHome/SherwoodRegular.ttf);
+}
+
 body {
     font-family: 'Zelda';
     margin: 0;
 }
 
-body ::-webkit-scrollbar{
+body ::-webkit-scrollbar {
     width: 12px;
     background-color: rgb(125, 125, 0);
-    border-radius: 20px; 
+    border-radius: 20px;
 }
 
-body ::-webkit-scrollbar-thumb{
+body ::-webkit-scrollbar-thumb {
     background-color: purple;
     border-radius: 20px;
 }
 
 
-/* HEADWER */
 
 .container {
     width: 80%;
@@ -141,54 +145,157 @@ body ::-webkit-scrollbar-thumb{
     transition: 1s;
 }
 
-/* header */
 
-/* CURIO */
+
+
 
 .curio {
     height: 95vh;
     background-image: url(imagesHome/fundoTOTK-1.png);
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 5cm 5cm 5cm 5cm black;
 }
 
 .curio .container {
-    width: 53vw;
-    height: 66vh;
-    display: flex;
+    margin: -10vh 0 0 0;
+    height: 80%;
+    width: 80%;
     justify-content: center;
-    align-items: center;
-    background-image: url(./imagesHome/imagesCurio/OcarinaOfTimeFundo.png);
-    margin: 10vw 0 0 0;
-    border: solid 1px black;
+}
+
+.curio .container .titulo {
+    margin: 0 0 0 25%;
+    text-align: center;
+    color: white;
+    font-size: 150%;
+    width: 50%;
+    backdrop-filter: brightness(80%);
+    border-radius: 15px;
 }
 
 .curio .container .info {
-    display: flex;
-    justify-content: center;
-    width: 53vw;
-    height: 50vh;
-    margin: 0 10vw 0 0;
-}
-
-.curio .container .info .escrito {
-    margin: -7.5% 0 0 10vw;
-    backdrop-filter: blur(5px);
-    display: flex;
-    width: 50vw;
+    background-image: url(imagesHome/imagesCurio/OcarinaOfTimeFundo.png);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
     color: white;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    border-radius: 15px;
+    border: rgb(121, 121, 250) solid 5px;
+}
+
+.curio .container .info .fundo {
+    font-family: 'Zelda3';
+    margin: 10vh 0 0 10%;
+    width: 80%;
+    overflow-y: scroll;
+    backdrop-filter: brightness(20%);
+    max-height: 55vh;
+    border-radius: 15px;
+    border: rgb(0, 0, 0) solid 3px;
+}
+
+.curio .container .info .fundo p {
+    font-size: 150%;
+}
+
+.curio .container .info .fundo h1 {
+    text-align: center;
+}
+
+.curio .container .info .fundo h2 {
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.curio .container .info .fundo .escrito {
+    margin: 2vh 5vh;
+}
+
+/* historia */
+
+.historia {
+    display: flex;
+    height: 95vh;
     justify-content: center;
-    align-items: top;
+    background-image: url('imagesHome/fundoTOTK-1.png');
 }
 
-.curio .container .info .escrito p {
-    font-size: 140%;
+.historia .container {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 0 0;
 }
 
+.historia .container .titulo {
+    text-align: center;
+    height: 10%;
+    color: white;
+}
 
-/* curiosidade */
+.historia .container .info {
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    border-radius: 15px;
+    border: rgb(121, 121, 250) solid 5px;
+}
 
-/* PERSONAGENS */
+.historia .container .info .fundo {
+    /* background-size: auto; VER ISSO O MAIS RAPIDO POSSÍBEL; */
+    /* overflow-y: scroll; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(imagesHome/ImagesHistoria/MasterSword.png);
+    background-size: cover;
+}
+
+.historia .container .info .fundo .escrito {
+    overflow-y: scroll;
+    height: 90%;
+    width: 80%;
+    text-align: center;
+    backdrop-filter: brightness(25%);
+    margin: 4vh 5vh;
+    border-radius: 15px;
+    font-family: 'Zelda2';
+}
+
+.historia .container .info .fundo .escrito p {
+    font-size: 150%;
+    margin: 5vh 5vw;
+    text-align: start;
+}
+
+.historia .container .info .fundo .escrito h2 {
+    font-size: 170%;
+    margin: 5vh 5vw;
+}
+
+.historia .container .info .fundo .escrito h1 {
+    font-size: 250%;
+    margin: 5vh 5vw;
+}
+
+.historia .container .info .fundo .escrito h3 {
+    font-size: 150%;
+    margin: 5vh 5vw;
+    text-align: start;
+}
+
+/* historia */
 
 .diagrama .container {
     background-color: purple;
@@ -249,12 +356,10 @@ body ::-webkit-scrollbar-thumb{
     height: 300px;
 }
 
-/*Primeiro bloco*/
 
 .cartas-1 .cardpri {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background: #f2f2f2;
     width: 29%;
@@ -270,10 +375,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-1 .cardpri:hover {
-    color: white;
+    color: black;
     transition: 1s;
     cursor: pointer;
     opacity: 100%;
@@ -286,7 +393,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -301,10 +407,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-1 .cardtwo:hover {
-    color: #5303b6;
+    color: black;
     transition: 1s;
     cursor: pointer;
     opacity: 100%;
@@ -316,7 +424,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -331,25 +438,24 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: #6d9808;
 }
 
 .cartas-1 .cardthere:hover {
-    color: #6d9808;
-    ;
+    color: black;
     transition: 1s;
     cursor: pointer;
     opacity: 100%;
     filter: blur(0px);
     width: 50%;
+    font-size: 200%;
 }
 
-/*Segundo bloco*/
 
 .cartas-2 .carddois {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -364,10 +470,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-2 .carddois:hover {
-    color: #473e3e;
+    color: black;
     transition: 1s;
     cursor: pointer;
     opacity: 100%;
@@ -379,7 +487,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -394,10 +501,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-2 .cardtres:hover {
-    color: #473e3e;
+    color: black;
     transition: 1s;
     cursor: pointer;
     opacity: 100%;
@@ -409,7 +518,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -424,10 +532,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: black;
+    text-align: center;
 }
 
 .cartas-2 .cardquatro:hover {
-    color: #473e3e;
+    color: white;
     transition: 1s;
     cursor: pointer;
     filter: blur(0px);
@@ -435,13 +545,11 @@ body ::-webkit-scrollbar-thumb{
     width: 50%;
 }
 
-/*Terceiro bloco*/
 
 .cartas-3 .cardfist {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -456,10 +564,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-3 .cardfist:hover {
-    color: #4b0404;
+    color: black;
     transition: 1s;
     cursor: pointer;
     filter: blur(0px);
@@ -471,7 +581,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -486,10 +595,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-3 .cardsecond:hover {
-    color: #0505ae;
+    color: black;;
     transition: 1s;
     cursor: pointer;
     filter: blur(0px);
@@ -502,7 +613,6 @@ body ::-webkit-scrollbar-thumb{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 29%;
     min-height: 1px;
@@ -517,11 +627,12 @@ body ::-webkit-scrollbar-thumb{
     filter: blur(1px);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+    text-align: center;
 }
 
 .cartas-3 .cardterceiro:hover {
-    color: #19a600;
-    ;
+    color: black;
     transition: 1s;
     filter: blur(0px);
     cursor: pointer;
@@ -550,11 +661,9 @@ section img {
     color: white;
 }
 
-/* JOGOS */
 
 
 
-/* PERSONAGENS */
 
 .perso h2 {
     font-size: 50px;
@@ -587,7 +696,6 @@ section img {
 .perso .cartas-personagens .persoLink {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     background: #f2f2f2;
     width: 20%;
@@ -618,7 +726,6 @@ section img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 25%;
     min-height: 1px;
@@ -649,7 +756,6 @@ section img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     background: #f2f2f2;
     width: 20%;
     min-height: 1px;
@@ -698,4 +804,86 @@ section img {
 }
 
 
-/* PERSONAGENS */
+
+
+
+.analise {
+    background-image: url('imagesHome/fundoTOTK-1.png');
+    height: 97vh;
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Zelda2';
+}
+
+.analise .container {
+    backdrop-filter: brightness(60%);
+    display: flex;
+    margin: 0 0 10vh 0;
+    width: 80%;
+    border-radius: 50px;
+}
+
+.analise .container .informacoes {
+    text-align: center;
+}
+
+.analise .container .informacoes .graficos {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 0 0;
+    max-height: 50vh;
+}
+
+.analise .container .informacoes .titulo {
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+.analise .container .informacoes .grafico1 {
+    margin: 0 0 0 0;
+    width: 40vw;
+}
+
+
+.analise .container .informacoes .grafico2 {
+    margin: 0 0 0 5vw;
+    width: 40vw;
+}
+
+.analise .container .informacoes h1 {
+    color: white;
+}
+
+.analise .container .informacoes h2 {
+    color: white;
+    margin: 0 5vw 0 0;
+}
+
+
+.analise .container .informacoes .grafico1 h2 {
+    color: white;
+    margin: 0 5vw 0 0;
+}
+
+.analise .container .informacoes .grafico2 h2 {
+    color: white;
+    margin: 2vh 10vw 0 0;
+    color: yellow;
+}
+
+.analise .container .informacoes .grafico1 h1 {
+    color: white;
+    margin: 0 5vw 0 0;
+}
+
+.analise .container .informacoes .grafico2 h1 {
+    color: white;
+    margin: 3vh 10vw 0 0;
+}
+
+.analise .container .informacoes h3 {
+    color: yellow;
+    margin: 0 0 0 5vw;
+    font-size: 140%;
+}

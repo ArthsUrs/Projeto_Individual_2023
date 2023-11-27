@@ -1,13 +1,35 @@
+
+
 body {
     background-color: rgb(57, 2, 57);
     margin: 0 0 0 0;
-    font-family: 'Zelda';
+    font-family: 'Zelda2';
 }
 
 html ::-webkit-scrollbar{
     width: 12px;
-    background-color: rgb(125, 125, 0);
+    background-color: rgb(255, 255, 0);
     border-radius: 20px; 
+}
+
+body input{
+    font-family: 'Zelda2';
+    background-color: rgb(50, 4, 50);
+    color: black;
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(255, 255, 0);
+}
+
+body button{
+    font-family: 'Zelda2';
+    border-radius: 15px;
+    background-color: rgb(255, 255, 0);;
+}
+
+body select{
+    border-radius: 15px;
+    background-color: rgb(255, 255, 0);
 }
 
 html ::-webkit-scrollbar-thumb{
@@ -36,35 +58,52 @@ html ::-webkit-scrollbar-thumb{
 .info .user {
     height: 100vh;
     width: 18vw;
-    background-color: rgb(57, 2, 57);
+    background-image: url(imagesSite/zeldaTesteImg.png);
+}
+
+.info .user .fundo{
+    backdrop-filter: brightness(25%);
+    height: 100%;
+    width: 100%;
+    margin: -28.5% 0 0 0;
 }
 
 .info .user .carreira{
+    border-radius: 5px;
     margin: 10vh 2vw 0 2vw;
-    width: 80%;
-    height: 50vh;
+    width: 15vw;
+    height: 55vh;
     color: white;
     font-family: 'Zelda2';
 }
 
 .info .user .carreira .titulo{
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
     text-align: center;
+    color: white;
 }
 
 .info .user .carreira .metricas{
-    color: rgb(255, 215, 0);
+    margin: 5vh 0 0 0;
+    border-radius: 5px;
+    color: white;
+    font-weight: 100px;
+    backdrop-filter: blur(2px);
+    text-align: center;
+    height: 34vh;
+    font-size: 104%;
 }
 
 .info .user .infoUser h1{
-    margin: 10vh 0 0 0;
-    color: white;
+    border-radius: 5px;
+    margin: 10vh 2vw 0 2vw;   
     text-align: center;
+    color: white;
 }
 
 .info .invent {
-    /* margin: 0 20vw 0 20vw; */
     color: white;   
-    height: 40vh;
     width: 80%;
     text-align: center;
 }
@@ -73,7 +112,7 @@ html ::-webkit-scrollbar-thumb{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    backdrop-filter: blur(2px);
+    /* backdrop-filter: blur(2px); */
 }
 
 .info .invent .itens select{
@@ -81,7 +120,7 @@ html ::-webkit-scrollbar-thumb{
 }
 
 .info .tabela{
-    margin: 20vh 0 20vh 50vw;
+    margin: 20vh 0 20vh 38vw;
     background-color: black;
     width: 30vw;
     height: 50vh;
@@ -100,7 +139,7 @@ html ::-webkit-scrollbar-thumb{
     max-height: 45vh;
     font-family: 'Zelda2';
     color: white;
-    margin: 3vh 5vh 5vh 5vh;
+    margin: 3vh 5vh 5vh ;
 }
 
 .info .tabela .curio ::-webkit-scrollbar{
@@ -151,12 +190,84 @@ html ::-webkit-scrollbar-thumb{
 
 .info .tabela {
     color: white;
+
 }
 
 .info .retorno{
+    font-family: 'Zelda2';
+    background-color: rgb(57, 2, 57);
     margin: -70vh 40vw 0 5vw;
     border: solid 1px white;
     border-radius: 12px;
     width: 20vw;
-    max-height: 50vh;
+    height: 50vh;
 }
+
+.info .retorno button{
+    margin: 5vh 0 0 0;
+    height: 5vh;
+}
+
+.info .retorno p{
+    margin: 5vh 2vw 0 2vw;
+}
+
+.retorno .escrito{
+    margin: 10vh 0 0 0;
+    height: 80%;
+}
+
+.retorno .mensagem{
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+
+.inventory {
+    margin: -100vh 0 0 88vw;
+    height: 100vh;
+    width: 12vw;
+    display: flex;
+    background-image: url(imagesSite/fundoInventario.png);
+}
+
+.inventory .container{
+    width: 80%;
+    margin: 13%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.inventory .fundo{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: brightness(25%);
+    text-align: center;
+}
+
+.inventinventory .container .infoInvent .escrito .itens{
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 0 0;
+}
+
+.inventory .container .infoInvent .escrito .locais{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0 0 0;
+}
+
+.inventory .container .infoInvent .escrito .perso{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0 0 0;
+}
+
+.inventory .container .infoInvent .escrito button{
+    margin: 5vh 0 0 0;
+    background-color: rgb(23, 23, 23);
+    color: white;
+    height: 10vh;
+    cursor: pointer;
+}
+

@@ -6,68 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Área</title>
     <link rel="stylesheet" href="userStyle.css">
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="info">
         <div class="user">
-            <div class="infoUser">
-                <h1>
-                    Bem vindo a <br> sua area!
-                </h1>
-            </div>
-            <div class="carreira">
-                <div class="titulo">
-                    <h2>
-                        Ainda pretende zerar alguma The Legend of Zelda????
-                    </h2>
-                    <h3>
-                        Ja imaginou <i> organizar os "Zeldas"</i> que você pretende <i>zerar</i> e baseado nas suas
-                        horas de jogos <i>calcular</i> quanto tempo você <i> aproximadamente levará </i> para zerar a
-                        todos, pois preencha os campos, para eu poder te ajudar, <i> de fã para fã </i>:
-                    </h3>
+            <div class="fundo">
+                <div class="infoUser">
+                    <h1>
+                        Bem vindo a <br> sua area!
+                    </h1>
                 </div>
-                <div class="metricas">
-                    <label for="i_jogosZelda">
-                        <p>
-                            Insira o titulo de Zelda que voce ainda pretende zerar (cadastre quantos titulos preferir):
-                        </p>
-                    </label>
-                    <input placeholder="The Legend of Zelda:" type="text" id="i_jogosZelda"> <br><br>
-
-                    <label for="i_horasZelda">
-                        <p>
-                            Insira as horas que você acha que vai demorar para zerar o Zelda cadastrado antes:
-                        </p>
-                    </label>
-                    <input placeholder="Insira somente as horas :))" type="text" id="i_horasZelda"> <br><br>
-                    <br>
-                    <button onclick="cadastrar()">
-                        Insira os jogos na sua LISTA
-                    </button>
+                <div class="carreira">
+                    <div class="titulo">
+                        <h2>
+                            Crie sua lista temporaria para The Legend of Zelda
+                        </h2>
+                        <h3>
+                            Ja imaginou <i> organizar os "Zeldas"</i> que você pretende <i>zerar</i> e baseado nas suas
+                            horas de jogos <i>calcular</i> quanto tempo você <i> aproximadamente levará </i> para zerar
+                            a
+                            todos, pois preencha os campos, para eu poder te ajudar, <i> de fã para fã </i>:
+                        </h3>
+                    </div>
+                    <div class="metricas">
+                        <label for="i_jogosZelda">
+                            <p>
+                                Insira o titulo de Zelda que voce ainda pretende zerar (cadastre quantos titulos
+                                preferir):
+                            </p>
+                        </label>
+                        <input placeholder="The Legend of Zelda:" type="text" id="i_jogosZelda"> <br><br>
+                        <label for="i_horasZelda">
+                            <p>
+                                Insira as horas que você acha que vai demorar para zerar o Zelda cadastrado antes:
+                            </p>
+                        </label>
+                        <input placeholder="Insira somente as horas :))" type="text" id="i_horasZelda"> <br><br>
+                        <br>
+                        <button onclick="cadastrar()">
+                            Insira os jogos na sua LISTA
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+
+
         <div class="invent">
             <h1>
-                seu inventario!!
+                Bem vindo a sua area de utilizador
             </h1>
             <h2>
-                Escolha seu itens preferidos, de todos os Zeldas:
+                Escolha seu inventário ou personalize sua lista de jogos temporariamente.
             </h2>
+            <h3>
+                <---------------------- CRIA SUA LISTA // ESCOLHA SEU ITEM FAVORITO ---------------------->
+            </h3>
             <div class="itens">
-                <select name="itens" id="">
-
-                </select>
-
-                <select name="local" id="">
-
-                </select>
-
-                <select name="Personagem" id="">
-
-                </select>
             </div>
+
+
             <div class="tabela">
                 <div class="curio">
                     <h1>
@@ -78,8 +84,7 @@
                     </h2>
                     <div style="color: red;" class="curio6">
                         <p>
-                            O NOME DA PRINCESA É ZELDA, não do guerreiro
-                        </p>
+                            O NOME DA PRINCESA É ZELDA </p>
                     </div>
                     <div class="curio1">
                         <p>
@@ -126,12 +131,111 @@
                     </div>
                 </div>
             </div>
-            <div class="retorno">
-                <h1>
-                    <button>
-                        Veja os jogos que você ainda pretende zerar:
-                    </button>
-                </h1>
+            <div id="retorno" class="retorno">
+                <button onclick="mostrar()">
+                    Veja sua lista
+                </button>
+                <button onclick="mostrarHoras()">
+                    horas para zerar
+                </button>
+                <div id="mensagem" class="mensagem">
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="inventory">
+        <div class="fundo">
+            <div class="container">
+                <div class="infoInvent">
+                    <div class="tituloInvent">
+                        <h1>
+                            escolha seus favoritos
+                        </h1>
+                        <h2>
+                            Escolha alguns dos itens que eu reuni que mais você se identifique!!
+                        </h2>
+                    </div>
+                    <div class="escrito">
+                        <div class="itens">
+                            <label for="select_itens">
+                                <h3>
+                                    selecione um item
+                                </h3>
+                            </label>
+                        </div>
+                        <select name="itens" id="select_itens">
+                            <option value="1">
+                                Master Sword
+                            </option>
+                            <option value="2">
+                                Hylian Shield
+                            </option>
+                            <option value="3">
+                                Triforce
+                            </option>
+                            <option value="4">
+                                Kokiri Shield
+                            </option>
+                        </select>
+
+                        <div class="locais">
+                            <label for="select_local">
+                                <h3>
+                                    selecione um Local
+                                </h3>
+                            </label>
+                        </div>
+                        <select name="local" id="select_Local">
+                            <option value="1">
+                                Kakariko Village
+                            </option>
+                            <option value="2">
+                                Hatenno Village
+                            </option>
+                            <option value="3">
+                                Lon Lon Ranch
+                            </option>
+                            <option value="4">
+                                Castelo de Hyrule
+                            </option>
+                            <option value="5">
+                                Gerudo valley
+                            </option>
+                        </select>
+                        <div class="perso">
+                            <label for="select_Personagem">
+                                <h3>
+                                    selecione um personagem
+                                </h3>
+                            </label>
+                        </div>
+                        <select name="Personagem" id="select_Personagem">
+                            <option value="1">
+                                Zelda
+                            </option>
+                            <option value="2">
+                                Ganon/Ganondorf
+                            </option>
+                            <option value="3">
+                                Link
+                            </option>
+                            <option value="4">
+                                Impa
+                            </option>
+                        </select>
+                        <div class="informacaon">
+                            <button onclick="update()">
+                                <h3>
+                                    Setar inventario
+                                </h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -144,8 +248,100 @@
     horas = [];
     jogos = [];
 
-    cadastrar() {
+    function cadastrar() {
+        var titulo = i_jogosZelda.value;
+        var horaJogo = i_horasZelda.value;
 
+        horas.push(horaJogo);
+        jogos.push(titulo);
     }
 
+    function mostrar() {
+        mensagem.innerHTML = "";
+
+        if (horas.length <= 0 || jogos.length <= 0) {
+            alert("Sua lista está vazia, recomendo se organizar para zerar todos")
+        } else {
+            for (
+                i = 1;
+                i <= jogos.length;
+                i++
+            ) {
+                mensagem.innerHTML += `<p><br>
+                        ${jogos[i - 1]} com ${horas[i - 1]} Horas de duração<br></p>`
+            }
+        }
+    }
+
+
+
+    function mostrarHoras() {
+
+        mensagem.innerHTML = "";
+
+        var contador = Number("");
+
+        for (
+            i = 1;
+            i <= horas.length;
+            i++
+        ) {
+            contador += Number(horas[i - 1]);
+        }
+        mensagem.innerHTML += `
+           <br>
+            Para zerar tudo vocẽ precisará de ${contador} horas disponíveis!`
+    }
+
+    function update() {
+        var selectVarItem = select_itens.value;
+        var selectVarLocal = select_Local.value;
+        var selectVarPerso = select_Personagem.value;
+        var idUser = sessionStorage.ID_USUARIO;
+
+        if (
+            selectVarItem == "" ||
+            selectVarLocal == "" ||
+            selectVarPerso == ""
+        ) {
+            alert("Preencha todos os campos, por favor")
+            return false;
+        }
+
+
+
+        // Enviando o valor da nova input
+        fetch("/usuario/update", {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                selectServerItem: selectVarItem,
+                selectServerPersonagem: selectVarPerso,
+                selectServerLocal: selectVarLocal,
+                userServer: idUser,
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    Swal.fire({
+                        title: "armado para selar Ganon mais uma vez?",
+                        text: "se bem que ele desistiu da reencarnação né? hum",
+                        imageUrl: "https://i.gifer.com/1T4T.gif",
+                        imageWidth: 500,
+                        imageHeight: 500,
+                        imageAlt: "Custom image"
+                    });
+                } else {
+                    throw "Houve um erro";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+        return false;
+    }
 </script>

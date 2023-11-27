@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Registro</title>
     <link rel="stylesheet" href="StyleLogin.css">
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
 
 </head>
 
@@ -41,14 +47,15 @@
                             Login:
                         </h1>
                         <br>
-                        <input type="text" id="i_LoginEmail" value="Arthur@gmai.com" placeholder="Entre com seu email" required>
+                        <input type="text" id="i_LoginEmail" placeholder="Entre com seu email" required>
                     </div>
                     <div class="senha">
                         <h1>
                             Senha:
                         </h1>
                         <br>
-                        <input type="password" id="i_LoginSenha" value="123" placeholder="Entre com seu email" required> <br>
+                        <input type="password" id="i_LoginSenha" placeholder="Entre com seu email" required>
+                        <br>
                     </div>
                     <div class="redirecionar">
                         <h3>Nao esta registrado ainda?</h3>
@@ -81,30 +88,26 @@
                         <h1>
                             Entre com o Email:
                         </h1>
-                        <input type="text" value="Arthur@gmai.com" placeholder="seuEmail@gmail.com" id="i_emailCadastro"
-                            required>
+                        <input type="text" placeholder="seuEmail@gmail.com" id="i_emailCadastro" required>
                     </div>
                     <div class="senha">
                         <h1>
                             Entre com a senha
                         </h1>
                         <br>
-                        <input type="text" value="123" id="i_senhaCadastro" placeholder="Escolha uma boa senha"
-                            required>
+                        <input type="password" id="i_senhaCadastro" placeholder="Escolha uma boa senha" required>
                     </div>
                     <div class="nome">
                         <h1>
                             Entre com o seu Nickname:
                         </h1>
-                        <input type="text" value="Arthur123" id="i_nomeCadastro" placeholder="Escolha um bom nome"
-                            required>
+                        <input type="text" id="i_nomeCadastro" placeholder="Escolha um bom nome" required>
                     </div>
 
                     <div class="idade">
                         <h1>
                             Escolha um titulo preferido da serie!
                         </h1>
-
                         <select name="select_jogosPreferidos" id="select_jogosPreferidos">
                             <option value="1">
                                 The Legend of Zelda: Skyward Sword
@@ -112,29 +115,29 @@
                             <option value="2">
                                 The Legend of Zelda: Minish Cap
                             </option>
-                            <option value="3">
+                            <option value="4">
                                 The Legend of Zelda: Ocarina of Time
                             </option>
-                            <option value="4">
+                            <option value="7">
                                 The Legend of Zelda: A Link to the past
                             </option>
-                            <option value="5">
+                            <option value="9">
                                 The Legend of Zelda: Oracle of Seasons/Ages
                             </option>
-                            <option value="6">
+                            <option value="10">
                                 The Legend of Zelda
                             </option>
-                            <option value="7">
+                            <option value="11">
                                 Zelda II: adventure of Link
                             </option>
-                            <option value="8">
+                            <option value="5">
                                 The Legend of Zelda: Majora's Mask
                             </option>
-                            <option value="9">
+                            <option value="6">
                                 The Legend of Zelda: Twilight Princess
                             </option>
-                            <option value="10">
-                                The Legend of Zelda: Fours Sword's
+                            <option value="3">
+                                The Legend of Zelda: Fours Swords
                             </option>
                             <option value="11">
                                 The Legend of Zelda: The Wind Waker
@@ -145,11 +148,17 @@
                             <option value="13">
                                 The Legend of Zelda: Spirit Track
                             </option>
-                            <option value="14">
+                            <option value="15">
                                 The Legend of Zelda: Breath of The Wild
                             </option>
-                            <option value="15">
+                            <option value="16">
                                 The Legend of Zelda: Tears of the Kingdom
+                            </option>
+                            <option value="8">
+                                The Legend of Zelda: Link's Awakening
+                            </option>
+                            <option value="14">
+                                The Legend of Zelda: A link between worlds
                             </option>
                         </select>
                     </div>
@@ -192,13 +201,23 @@
         var emailVar = i_emailCadastro.value;
         var senhaVar = i_senhaCadastro.value;
         var nomeVar = i_nomeCadastro.value;
+        var selectVar = select_jogosPreferidos.value;
+
 
         if (
             emailVar == "" ||
             senhaVar == "" ||
-            nomeVar == ""
+            nomeVar == "" ||
+            selectVar == ""
         ) {
-            alert("Preencha todos os campos, por favor")
+            Swal.fire({
+                        title: "preencha todos os campos",
+                        text: "O zelda está de olho em você",
+                        imageUrl: "https://i.gifer.com/2Y0h.gif",
+                        imageWidth: 500,
+                        imageHeight: 300,
+                        imageAlt: "Custom image"
+                    });
             return false;
         }
 
@@ -212,16 +231,34 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
+                selectServer: selectVar,
             }),
         })
             .then(function (resposta) {
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
-                    limparFormulario();
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
+                    Swal.fire({
+                        title: "Bem vindo!!",
+                        text: "Cadastrado com sucesso, redirecionando para a tela de Logins",
+                        imageUrl: "https://i.gifer.com/17mb.gif",
+                        imageWidth: 500,
+                        imageHeight: 300,
+                        imageAlt: "Custom image"
+                    });
+                    setTimeout(function () {
+                        window.location.href = "/siteLogin_Registro/Login_Registro.html"
+                    }, 4000);
+                }
+                else {
+                    Swal.fire({
+                        title: "Não foi possível relizar o cadastro",
+                        text: "confirme se suas informações estão correta ou pode ser que já exista uma conta cmo esse nome e email",
+                        imageUrl: "https://i.gifer.com/1Y1t.gif",
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: "Custom image"
+                    });
                 }
             })
             .catch(function (resposta) {
@@ -229,23 +266,6 @@
             });
         return false;
     }
-
-    function listar() {
-        fetch("/empresas/listar", {
-            method: "GET",
-        })
-            .then(function (resposta) {
-                resposta.json().then((empresas) => {
-                    empresas.forEach((empresa) => {
-                        listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
-                    });
-                });
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-    }
-
     // cadastrar
 
 
@@ -256,7 +276,14 @@
         var senhaVar = i_LoginSenha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert("Campos em branco");
+            Swal.fire({
+                    title: "Preencha todos os campos!",
+                    text: "o Zelda está de olho em você rapaz",
+                    imageUrl: "https://i.gifer.com/2Y0h.gif",
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: "Custom image"
+                });
             return false;
         }
 
@@ -273,11 +300,16 @@
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
 
             if (resposta.ok) {
-                console.log(resposta);
-                alert("Seja bem vindo de volta (ou só bem vindo)")
+                Swal.fire({
+                    title: "Bem vindo",
+                    text: "Redirecionando para sua area, aguarde um momento",
+                    imageUrl: "https://i.gifer.com/wfV.gif",
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: "Custom image"
+                });
 
                 resposta.json().then(json => {
                     console.log(json);
@@ -285,16 +317,21 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NICKNAME = json.nickname;
                     sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location.href = "/siteUsuario/IndexUser.html"
-                    }, 1000); // apenas para exibir o loading
                 });
 
+
+                setTimeout(function () {
+                    window.location.href = "/siteUsuario/IndexUser.html"
+                }, 4000);
             } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
+                Swal.fire({
+                    title: "Não foi possível realizar seu login",
+                    text: " reveja se seus dados estão corretos",
+                    imageUrl: "https://i.gifer.com/BZxL.gif",
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: "Custom image"
+                });
                 resposta.text().then(texto => {
                     console.error("erro");
                 });
