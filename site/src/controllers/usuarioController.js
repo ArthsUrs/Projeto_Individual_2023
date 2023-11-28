@@ -83,11 +83,11 @@ function pegar(req, res){
     usuarioModel.pegar()
         .then(
             function(pegar){
-                console.log(`Resultado: ${JSON.stringify(resultadoGrafico)}`);
+                console.log(`Resultado: ${JSON.stringify(pegar)}`);
 
                 if(pegar.length > 0){
-                    console.log(resultadoGrafico);
-                    res.status(200).json(resultadoGrafico);
+                    console.log(pegar);
+                    res.status(200).json(pegar);
                 }else {
                     res.status(404).send("A lista está vazia")
                 }

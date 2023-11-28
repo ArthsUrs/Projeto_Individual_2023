@@ -102,6 +102,16 @@ html ::-webkit-scrollbar-thumb{
     color: white;
 }
 
+.info .user .infoUser h3{
+    border-radius: 5px;
+    margin: 3vh 2vw 0 2vw;   
+    text-align: center;
+    color: white;
+}
+
+.info .user .infoUser a{
+    text-decoration: none;
+}
 .info .invent {
     color: white;   
     width: 80%;
