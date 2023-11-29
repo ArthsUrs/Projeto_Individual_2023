@@ -29,7 +29,7 @@ function update(fkItem, fkLocal, fkPersonagem, sessionUser) {
 
 function pegar(){
     var instrucao = `
-    select count(u.fkTitulo) as count, t.titulo from usuario as u join titulo as t on u.fkTitulo = t.idTitulo group by t.titulo;
+    select * from vw_Grafico;
     `
     return database.executar(instrucao);
 }

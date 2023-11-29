@@ -209,10 +209,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
             emailVar == "" ||
             senhaVar == "" ||
             nomeVar == "" ||
-            selectVar == ""
+            selectVar == "" || 
+            emailVar.indexOf('@') < 0 || 
+            emailVar.indexOf('.') < 0
         ) {
             Swal.fire({
-                        title: "preencha todos os campos",
+                        title: "Campos em branco ou caracteres faltando",
                         text: "O zelda está de olho em você",
                         imageUrl: "https://i.gifer.com/2Y0h.gif",
                         imageWidth: 500,
@@ -241,7 +243,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                 if (resposta.ok) {
                     Swal.fire({
                         title: "Bem vindo!!",
-                        text: "Cadastrado com sucesso, redirecionando para a tela de Logins",
+                        text: "Cadastrado com sucesso, redirecionando para a tela de Login",
                         imageUrl: "https://i.gifer.com/17mb.gif",
                         imageWidth: 500,
                         imageHeight: 300,
@@ -254,7 +256,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                 else {
                     Swal.fire({
                         title: "Não foi possível relizar o cadastro",
-                        text: "confirme se suas informações estão correta ou pode ser que já exista uma conta cmo esse nome e email",
+                        text: "confirme se suas informações estão correta ou pode ser que já exista uma conta com esse nome e email",
                         imageUrl: "https://i.gifer.com/1Y1t.gif",
                         imageWidth: 400,
                         imageHeight: 200,
